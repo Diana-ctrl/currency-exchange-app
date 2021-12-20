@@ -6,45 +6,38 @@ import { createStore, combineReducers } from 'redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-export type initialStateType = Array<string>;
+export type initialStateType = {
+  playlists: Array<string>
+};
 export type AppStateType = ReturnType<typeof rootReducer>
 type actionType = {
   type: 'ADD_TRACK',
-  payload: []
+  payload: string
 }
 
-const initialState: initialStateType = [
-  'Smalls like spirit', 
-  'Enter Sandman'
-]
-export let action = {
-  type: 'ADD_TRACK',
-  payload: []
+const initialState: initialStateType = {
+  playlists: ['Smalls like spirit', 'Enter Sandman']
 }
 
-
-function playlistReducer (state = initialState, action: actionType) {
+function playlistReducer (state:initialStateType = initialState, action: actionType):initialStateType {
   if (action.type === 'ADD_TRACK') {
-    return [
+    return {
       ...state,
-      action.payload
-    ]
+      playlists: [...state.playlists, action.payload]
+  }
   }
   return state;
 }
 
 let rootReducer = combineReducers({
-  payload: playlistReducer
+  playList: playlistReducer
 })
 
 let store = createStore(rootReducer);
  
-
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
       <App />
-    </React.StrictMode>
   </Provider>,
   document.getElementById('root')
 );
