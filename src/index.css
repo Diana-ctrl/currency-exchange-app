@@ -12,11 +12,16 @@ body {
   margin: 0 auto;
   margin-top: 50px;
 }
+
 .currency {
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 15px;
   border: 2px solid #2F4F4F;
   border-radius: 10px;
   background-color: rgba(249, 247, 246, 0.9);
+  background-color: #E0FFFF;
+  width: 50%;
 }
 .currency h2 {
   text-align: center;
@@ -61,6 +66,9 @@ body {
   border: 2px solid #A9A9A9;
   color: cornflowerblue;
 }
+.noActiveCurrency {
+  border-radius: 10px;
+}
 .activeCurrency {
   background-color: #483D8B;
   color: #E6E6FA;
@@ -74,4 +82,10 @@ body {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
+  width: 50%;
+}
+.forinput {
+  margin: 10px;
+  border: 2px solid #2F4F4F;
+  border-radius: 10px;
 }
