@@ -1,18 +1,21 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 import CurrencyExchangeContainer from './CurrencyExchangeContainer';
 import { Provider } from 'react-redux';
 import { store } from './redux/state'
+import reportWebVitals from './reportWebVitals';
 
-const Lesson1: React.FunctionComponent = () => {
-  return (
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <CurrencyExchangeContainer />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-    <React.Fragment>
-      <Provider store={store}>
-        <CurrencyExchangeContainer />
-      </Provider>
-    </React.Fragment>
-  );
-};
+reportWebVitals();
 
-export default Lesson1;
+
 
